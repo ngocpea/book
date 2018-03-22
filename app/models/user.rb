@@ -23,7 +23,7 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
-  belongs_to :books
+  has_many :books
 
   def will_save_change_to_email?
     false
