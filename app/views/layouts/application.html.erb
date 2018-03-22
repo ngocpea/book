@@ -14,7 +14,7 @@
 
     <div id="account">
   <% if current_user %>
-    <span>Welcome, <%= current_user.email %></span>
+    <span>Signed in as <%= current_user.email %></span>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to "Sign in", new_user_session_path %> <br>
