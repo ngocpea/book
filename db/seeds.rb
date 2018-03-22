@@ -7,3 +7,5 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 book = Book.create({ title: 'Sample Book',
                     author: 'Sample Author' })
+user = User.create({ email: 'test@example.com',
+                     password: 'password' })
