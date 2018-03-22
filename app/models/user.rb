@@ -1,5 +1,4 @@
-class User
-  has many :books
+class User 
   include Mongoid::Document
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -23,6 +22,8 @@ class User
   field :last_sign_in_at,    type: Time
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
+
+  belongs_to :books
 
   def will_save_change_to_email?
     false
