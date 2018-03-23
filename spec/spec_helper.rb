@@ -28,7 +28,7 @@ RSpec.configure do |config|
     # ...rather than:
     #     # => "be bigger than 2"
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
-    
+
     config.include Warden::Test::Helpers, type: :feature
     config.after(type: :feature) { Warden.test_reset! }
   end
@@ -98,5 +98,4 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
-
 end
