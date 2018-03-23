@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!
+  # before_action :book_owner?, only: [:edit, :update, :destroy]
   
   def index
     @book = Book.all
@@ -39,6 +40,12 @@ class BooksController < ApplicationController
   end
 
 private
+
+  # def book_owner?
+  #   return true if book_owner?(@book_user)
+  #     flash[:notice] = 'Access denied'
+  #     redirect_to books_path
+  #   end
 
   def book_params
     params.require(:book).permit(:title, :author)
