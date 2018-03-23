@@ -12,6 +12,8 @@
     <tr>
       <td><%= link_to book.title, book_path(book) %></td>
       <td><%= book.author %></td>
+      <td><%= link_to 'Edit', edit_book_path(book) %></td>
+      
     </tr>
   <% end %>
 </table>

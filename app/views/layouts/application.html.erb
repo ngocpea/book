@@ -14,13 +14,13 @@
 
     <div id="account">
   <% if current_user %>
-    <span>Signed in as <%= current_user.email %></span>
+    <br><span>Signed in as <%= current_user.email %></span><br>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to "Sign in", new_user_session_path %> <br>
     <%= link_to "Sign up", new_user_registration_path %> 
   <% end %><br>
-  <%= link_to "New Book", new_book_path %> 
+  <%= link_to "New Book", new_book_path %> | <%= link_to "Book Listing", root_path %> 
 </div>
   </body>
 </html>
