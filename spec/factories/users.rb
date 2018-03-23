@@ -4,9 +4,9 @@ FactoryBot.define do
     password "password"
   end
 
-  # factory :book do
-  #   author 'Sample Book'
-  #   title 'Sample Author'
-  #   user
-  # end
+  factory :book do
+    title 'Harry Potter'
+    author 'JK Rowling'
+    user
+  end
 end
