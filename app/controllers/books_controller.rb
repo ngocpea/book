@@ -1,8 +1,9 @@
 class BooksController < ApplicationController
-  #before_filter :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!
+  
 
   def index
-    @books = Book.all
+    @book = Book.all
   end
 
   def new
@@ -10,22 +11,23 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(book_params)
-
+    @book = current_user.books.create(book_params)
+    
+    
     if @book.save
-      redirect_to root_path, :notice => 'book has been create.'
+      redirect_to @book
     else
-      render plain: 'not saving to db'
+      render 'new'
     end
   end
 
   def show
     @book = Book.find(params[:id])
   end
-end
 
 private
 
-def book_params
-  params.require(:book).permit(:title, :author)
+  def book_params
+    params.require(:book).permit(:title, :author)
+  end
 end
