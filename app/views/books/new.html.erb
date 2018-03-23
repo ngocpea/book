@@ -1,17 +1,17 @@
 <h1>New Book</h1>
 
-<%= form_with scope: :book, local: true do |form| %>
+<%= form_for @book do |f| %>
     <p>
-      <%= form.label :book %><br>
-      <%= form.text_field :book %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
     </p>
    
     <p>
-      <%= form.label :author %><br>
-      <%= form.text_field :author %>
+      <%= f.label :author %><br>
+      <%= f.text_field :author %>
     </p>
    
     <p>
-      <%= form.submit %>
+      <%= f.submit %>
     </p>
   <% end %>
