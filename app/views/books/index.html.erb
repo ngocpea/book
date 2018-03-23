@@ -1,6 +1,6 @@
 <h1>Books</h1>
 
-<h1>Listing articles</h1>
+<h1>Listing Books</h1>
  
 <table>
   <tr>
@@ -10,9 +10,8 @@
  
   <% @book.each do |book| %>
     <tr>
-      <td><%= book.title %></td>
+      <td><%= link_to book.title, book_path(book) %></td>
       <td><%= book.author %></td>
-      <td><%= link_to 'Show', book_path(book) %></td>
     </tr>
   <% end %>
 </table>
