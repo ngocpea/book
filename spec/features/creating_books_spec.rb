@@ -18,7 +18,7 @@ RSpec.feature 'Users can create new books' do
 	  fill_in 'TItle', with: book.title
 	  book.save
 	  click_button 'Create Book'
-	  expect(page).to have_content('Title is already taken'.)
+	  expect(page).to have_content('Title is already taken.')
 	end
 
 end
