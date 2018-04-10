@@ -22,8 +22,8 @@ RSpec.feature 'Users can create new books' do
     end
 
     scenario 'cannot create book when title is taken' do
-      book.save!
       binding.pry
+      book.save!
       fill_in 'Title', with: book[:title]
       click_button 'Create Book'
       expect(page).to have_content('Title is already taken')
