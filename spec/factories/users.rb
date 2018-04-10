@@ -5,8 +5,8 @@ FactoryBot.define do
   end
 
   factory :book do
-    title 'Harry Potter'
-    author 'JK Rowling'
+    title "Harry Potter"
+    author "JK Rowling"
     user
   end
 end

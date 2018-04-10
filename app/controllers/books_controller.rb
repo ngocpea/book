@@ -44,12 +44,6 @@ class BooksController < ApplicationController
 
   private
 
-  # def book_owner?
-  #   return true if book_owner?(@book_user)
-  #     flash[:notice] = 'Access denied'
-  #     redirect_to books_path
-  #   end
-
   def book_params
     params.require(:book).permit(:title, :author)
   end
