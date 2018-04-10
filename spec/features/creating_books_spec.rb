@@ -1,3 +1,4 @@
+
 require 'rails_helper'
 require 'pry'
 
@@ -18,12 +19,14 @@ RSpec.feature 'Users can create new books' do
       fill_in 'Title', with: book[:title]
       fill_in 'Author', with: book[:author]
       click_button 'Create Book'
-      expect(page).to have_current_path('/books')
+      expect(page).to have_content(book[:title])
+      expect(page).to have_content(book[:author])
     end
 
     scenario 'cannot create book when title is taken' do
-      binding.pry
       book.save!
+      visit '/'
+      click_link 'New Book'
       fill_in 'Title', with: book[:title]
       click_button 'Create Book'
       expect(page).to have_content('Title is already taken')
